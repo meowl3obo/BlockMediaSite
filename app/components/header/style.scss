@@ -1,3 +1,5 @@
+@import "@/app/mixin.scss";
+
 header {
   height: 56px;
   padding: 0 16px;
@@ -5,4 +7,75 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  .start,
+  .end {
+    width: 200px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    .site-icon {
+      padding: 18px 14px 18px 16px;
+    }
+  }
+
+  .end {
+    gap: 15px;
+  }
+
+  .center {
+    width: 100%;
+    text-align: center;
+    padding-inline: 20px;
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      input {
+        width: calc(100% - 140px);
+        max-width: 540px;
+        height: 26px;
+        padding: 5px 10px 5px 20px;
+        background-color: transparent;
+        border-radius: 20px 0 0 20px;
+        border: 1px solid;
+        outline: unset;
+        font-size: 16px;
+        @include dark-theme {
+          color: get-dark-color(main-font);
+          border-color: get-dark-color(input-border);
+          &:focus {
+            border-color: get-dark-color(input-border-focus);
+          }
+        }
+        @include light-theme {
+          color: get-light-color(main-font);
+          border-color: get-light-color(input-border);
+          &:focus {
+            border-color: get-light-color(input-border-focus);
+          }
+        }
+      }
+      button {
+        cursor: pointer;
+        padding: 8px 20px;
+        border-radius: 0 20px 20px 0;
+        border-style: solid;
+        border-width: 1px 1px 1px 0;
+        outline: unset;
+        @include dark-theme {
+          color: get-dark-color(button-icon);
+          background-color: get-dark-color(button-background);
+          border-color: get-dark-color(input-border);
+        }
+        @include light-theme {
+          color: get-light-color(button-icon);
+          background-color: get-light-color(button-background);
+          border-color: get-light-color(input-border);
+        }
+      }
+    }
+  }
 }

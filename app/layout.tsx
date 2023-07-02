@@ -1,6 +1,9 @@
 import "./globals.scss";
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import dynamic from 'next/dynamic';
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +17,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const Header = dynamic(() => import("@/app/components/header"))
+  const Header = dynamic(() => import("@/app/components/header"));
   return (
     <html>
       <body className={inter.className}>
