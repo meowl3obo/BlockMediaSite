@@ -1,0 +1,26 @@
+@import "./mixin.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  @include dark-theme {
+    color-scheme: dark;
+  }
+  @include light-theme {
+    color-scheme: light;
+  }
+}
+
+body {
+  @include dark-theme {
+    background-color: get-dark-color(base-background);
+    color: get-dark-color(main-font);
+  }
+  @include light-theme {
+    background-color: get-light-color(base-background);
+    color: get-light-color(main-font);
+  }
+}

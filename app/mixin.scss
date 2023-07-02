@@ -1,0 +1,27 @@
+@import "./variables.scss";
+
+@mixin dark-theme {
+  @at-root #{selector-nest(':root[theme=dark]', &)} {
+    @content;
+  }
+  @at-root #{selector-nest(':root[theme=""]', &)} {
+    @content;
+  }
+  @at-root #{selector-nest(':root:not([theme])', &)} {
+    @content;
+  }
+}
+
+@mixin light-theme {
+  @at-root #{selector-nest(':root[theme=light]', &)} {
+    @content;
+  }
+}
+
+@function get-dark-color($key) {
+  @return map-get(map-get($theme, dark), $key)
+};
+
+@function get-light-color($key) {
+  @return map-get(map-get($theme, light), $key)
+};
