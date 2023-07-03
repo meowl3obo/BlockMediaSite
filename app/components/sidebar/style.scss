@@ -1,0 +1,62 @@
+@import "@/app/mixin.scss";
+
+.sidebar {
+  white-space: nowrap;
+  width: 250px;
+  padding-block: 10px;
+
+  nav {
+    padding-inline: 10px;
+
+    li {
+      cursor: pointer;
+      padding: 9px 20px;
+      list-style-type: none;
+      border-radius: 10px;
+      margin-bottom: 5px;
+
+      &:hover {
+        @include dark-theme {
+          &:hover {
+            background-color: get-dark-color(icon-btn-background);
+          }
+        }
+        @include light-theme {
+          &:hover {
+            background-color: get-light-color(icon-btn-background);
+          }
+        }
+      }
+      &.active {
+        @include dark-theme {
+          background-color: get-dark-color(icon-btn-background);
+        }
+        @include light-theme {
+          background-color: get-light-color(icon-btn-background);
+        }
+      }
+
+      svg {
+        width: 20px;
+      }
+
+      a {
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: unset;
+        margin-left: 20px;
+        @include dark-theme {
+          color: get-dark-color(main-font);
+        }
+        @include light-theme {
+          color: get-light-color(main-font);
+        }
+      }
+    }
+
+    hr {
+      opacity: .3;
+      margin-block: 5px;
+    }
+  }
+}
