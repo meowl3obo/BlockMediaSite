@@ -1,12 +1,21 @@
 @import "@/app/mixin.scss";
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   height: 56px;
   padding: 0 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @include dark-theme {
+    background-color: get-dark-color(base-background);
+  }
+  @include light-theme {
+    background-color: get-light-color(base-background);
+  }
 
   .start,
   .end {
