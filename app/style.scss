@@ -1,0 +1,11 @@
+.home-main {
+  width: -webkit-fill-available;
+  padding: 20px 50px;
+
+  .video-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    row-gap: 20px;
+    width: 100%;
+  }
+}
