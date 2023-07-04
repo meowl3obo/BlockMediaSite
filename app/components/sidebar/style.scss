@@ -3,10 +3,14 @@
 .sidebar {
   position: sticky;
   top: 56px;
-  white-space: nowrap;
-  width: 250px;
-  padding-block: 10px;
+  display: flex;
   align-self: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: calc(100dvh - 76px);
+  padding-block: 10px;
+  white-space: nowrap;
 
   nav {
     padding-inline: 10px;
@@ -56,10 +60,42 @@
         }
       }
     }
+  }
 
-    hr {
-      opacity: .3;
-      margin-block: 5px;
+  hr {
+    opacity: .3;
+    margin-block: 5px;
+  }
+
+  footer {
+    padding-inline: 10px;
+    .other-links {
+      white-space: initial;
+      padding-block: 10px;
+      .other-link {
+        white-space: nowrap;
+        a {
+          padding-inline: 3px;
+          font-size: 14px;
+          font-weight: 400;
+          opacity: .5;
+          text-decoration: unset;
+          @include dark-theme {
+            color: get-dark-color(main-font);
+          }
+          @include light-theme {
+            color: get-light-color(main-font);
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .copyright {
+      text-align: left;
+      opacity: .5;
+      font-size: 12px;
     }
   }
 }
