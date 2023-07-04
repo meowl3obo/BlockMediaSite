@@ -1,16 +1,19 @@
-'use client';
+interface IParams {
+  searchParams: { [key: string]: string | string[] };
+}
 
-import { useSearchParams } from 'next/navigation'
+export async function generateMetadata({ searchParams }: IParams) {
+  const searchQuery = searchParams["search"];
+  return {
+    title: `${searchQuery} - MeowlTube`,
+    description: "MeowlTube is blockchain media platform",
+  };
+}
 
-export default () => {
-  const searchParams = useSearchParams();
-  const searchQuery = searchParams.get('search')
+export default ({ searchParams }: IParams) => {
+  const searchQuery = searchParams["search"];
 
-  console.log('init')
+  console.log("init");
 
-  return (
-    <div>
-      query: {searchQuery}
-    </div>
-  )
+  return <div>query: {searchQuery}</div>;
 };

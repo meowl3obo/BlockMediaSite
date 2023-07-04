@@ -18,7 +18,7 @@ export default () => {
       <nav>
         <ul>
           { firstLinks.map(link => {
-            return <li className={pathName === link.link ? 'active' : ''} onClick={() => toPath(link.link)}>
+            return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
               <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
               <Link href={link.link}>{link.text}</Link>
             </li>
@@ -27,7 +27,7 @@ export default () => {
         <hr></hr>
         <ul>
           { secondLinks.map(link => {
-              return <li className={pathName === link.link ? 'active' : ''} onClick={() => toPath(link.link)}>
+              return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
                 <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
                 <Link href={link.link}>{link.text}</Link>
               </li>
@@ -38,7 +38,7 @@ export default () => {
         <hr></hr>
         <div className='other-links'>
           { otherLinks.map(link => {
-              return <span className='other-link'><Link href={link.link}>{link.text}</Link></span>
+              return <span className='other-link' key={link.text}><Link href={link.link}>{link.text}</Link></span>
           })}
         </div>
         <div className='copyright'>© 2023 Meowl</div>

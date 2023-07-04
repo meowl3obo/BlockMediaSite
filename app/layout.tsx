@@ -1,4 +1,4 @@
-import "./globals.scss";
+import "./styles/globals.scss";
 import "./layout.scss";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "MeowlTube",
   description: "MeowlTube is blockchain media platform",
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 export default function RootLayout({
@@ -22,7 +25,7 @@ export default function RootLayout({
   const Sidebar = dynamic(() => import("@/app/components/sidebar"));
   return (
     <html>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true} >
         <Header />
         <main className="main">
           <Sidebar />
