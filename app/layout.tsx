@@ -4,9 +4,13 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './redux'
 config.autoAddCss = false;
 
 const inter = Inter({ subsets: ["latin"] });
+const store = createStore(rootReducer);
 
 export const metadata = {
   title: "MeowlTube",
@@ -26,11 +30,13 @@ export default function RootLayout({
   return (
     <html>
       <body className={inter.className} suppressHydrationWarning={true} >
-        <Header />
-        <main className="main">
-          <Sidebar />
-          {children}
-        </main>
+        <Provider store={store}>
+          <Header />
+          <main className="main">
+            <Sidebar />
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   );
