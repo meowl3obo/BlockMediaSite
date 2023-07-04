@@ -2,16 +2,18 @@
 
 import "./style.scss";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faVideo, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons'
 import { useRef, KeyboardEvent } from "react";
-import Link from "next/link";
 
 export default () => {
-  const router = useRouter()
   const IconButton = dynamic(() => import("@/app/components/iconButton"));
+  const LogoLight = dynamic(() => import("@/app/components/logo/logo-light"));
+  const LogoDark = dynamic(() => import("@/app/components/logo/logo-dark"));
+  const router = useRouter()
   const searchInput = useRef<HTMLInputElement>(null)
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -42,7 +44,10 @@ export default () => {
           <IconButton icon={faBars} size="fa-xl" onClick={controlSideBar}></IconButton>
         </div>
         <div className="site-icon">
-          <Link href="/">MeowlTube</Link>
+          <Link href="/">
+          {/* MeowlTube */}
+            <LogoDark />
+          </Link>
         </div>
       </div>
       <div className="center">
