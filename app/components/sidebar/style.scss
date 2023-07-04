@@ -1,9 +1,12 @@
 @import "@/app/mixin.scss";
 
 .sidebar {
+  position: sticky;
+  top: 56px;
   white-space: nowrap;
   width: 250px;
   padding-block: 10px;
+  align-self: flex-start;
 
   nav {
     padding-inline: 10px;
