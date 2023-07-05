@@ -4,6 +4,8 @@ import "./style.scss";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import { useDispatch } from 'react-redux'
+import { controlSidebar } from '@/app/redux/component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faVideo, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons'
@@ -13,6 +15,7 @@ export default () => {
   const IconButton = dynamic(() => import("@/app/components/iconButton"));
   const LogoLight = dynamic(() => import("@/app/components/logo/logo-light"));
   const LogoDark = dynamic(() => import("@/app/components/logo/logo-dark"));
+  const dispatch = useDispatch()
   const router = useRouter()
   const searchInput = useRef<HTMLInputElement>(null)
 
@@ -26,7 +29,7 @@ export default () => {
     router.push(`result?search=${searchQuery}`)
   }
   const controlSideBar = () => {
-    console.log('controlSideBar')
+    dispatch(controlSidebar())
   }
   const toUploadVideo = () => {
     console.log('toUploadVideo')

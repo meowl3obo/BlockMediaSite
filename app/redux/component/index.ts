@@ -1,14 +1,19 @@
-const initialState = {
+import { createSlice } from '@reduxjs/toolkit'
+
+interface IState {
+  sidebarStatus: boolean
+}
+const initialState: IState = {
   sidebarStatus: false
 }
 
-const componentReducer = (state = initialState, action: { type: string }) => {
-  switch (action.type) {
-    case "OPEN":
-      return { ...state, sidebarStatus: true }
-    case "CLOSE":
-      return { ...state, sidebarStatus: false }
+const componentSlice = createSlice({
+  name: "component",
+  initialState,
+  reducers: {
+    controlSidebar: (state) => { state.sidebarStatus = !state.sidebarStatus }
   }
-}
+})
 
-export default componentReducer
+export default componentSlice.reducer
+export const { controlSidebar } = componentSlice.actions

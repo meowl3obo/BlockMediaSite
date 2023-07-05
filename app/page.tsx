@@ -2,6 +2,14 @@
 import './style.scss'
 import dynamic from "next/dynamic";
 
+export const metadata = {
+  title: "MeowlTube",
+  description: "MeowlTube is blockchain media platform",
+  icons: {
+    icon: '/favicon.ico'
+  }
+};
+
 export default function Home() {
   const VideoCard = dynamic(() => import("@/app/components/videoCard"));
   return (

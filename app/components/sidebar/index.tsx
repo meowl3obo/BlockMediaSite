@@ -3,18 +3,22 @@
 import './style.scss'
 import Link from "next/link";
 import { useRouter, usePathname } from 'next/navigation'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/app/redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { firstLinks, secondLinks, otherLinks } from '@/app/config/sidebar'
 
 export default () => {
   const router = useRouter()
   const pathName = usePathname();
+  const sidebarStatus = useSelector((state: RootState) => state.component.sidebarStatus)
+  console.log(sidebarStatus)
 
   const toPath = (path: string) => {
     router.push(path)
   }
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${sidebarStatus ? 'open' : 'close'}`}>
       <nav>
         <ul>
           { firstLinks.map(link => {
