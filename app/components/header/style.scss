@@ -19,9 +19,6 @@ header {
   @include pc {
     padding: 0 16px;
     width: calc(100% - 32px);
-    .pc-only {
-      display: none;
-    }
   }
 
   @include mobile {
