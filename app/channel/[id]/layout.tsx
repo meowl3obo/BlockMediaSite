@@ -14,8 +14,7 @@ export default function ChannelLayout({
   const id = params['id']
   return (
     <div>
-      <div>
-        <div> user id : {id} / bar links</div>
+      <div className='links-bar'>
         {
           links.map(link => { 
             return <span className='link-span' key={link.text}>
