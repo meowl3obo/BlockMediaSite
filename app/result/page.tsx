@@ -1,6 +1,4 @@
-interface IParams {
-  searchParams: { [key: string]: string | string[] };
-}
+import { IParams } from '@/app/types/route'
 
 export async function generateMetadata({ searchParams }: IParams) {
   const searchQuery = searchParams["search"];
