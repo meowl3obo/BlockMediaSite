@@ -1,15 +1,18 @@
 'use client';
 
 import "./style.scss";
+import { useRef, KeyboardEvent } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '@/app/redux'
 import { controlSidebar } from '@/app/redux/component'
+import { setAddress } from '@/app/redux/user'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faVideo, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons'
-import { useRef, KeyboardEvent } from "react";
+import { connectMetamask } from '@/app/utils/metamask';
 
 export default () => {
   const IconButton = dynamic(() => import("@/app/components/iconButton"));
@@ -17,6 +20,7 @@ export default () => {
   const LogoDark = dynamic(() => import("@/app/components/logo/logo-dark"));
   const dispatch = useDispatch()
   const router = useRouter()
+  const userAddress = useSelector((state: RootState) => state.user.address)
   const searchInput = useRef<HTMLInputElement>(null)
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -37,8 +41,15 @@ export default () => {
   const checkNotify = () => {
     console.log('checkNotify')
   }
-  const controlUserController = () => {
-    console.log('controlUserController')
+  const controlUserController = async () => {
+    if (userAddress === '') {
+      const address = await connectMetamask()
+      if (address === '') console.log("請安裝metamask")
+      else {
+        dispatch(setAddress(address))
+        router.push(`/channel/${address}`)
+      }
+    } else router.push(`/channel/${userAddress}`)
   }
   return (
     <header className="header">

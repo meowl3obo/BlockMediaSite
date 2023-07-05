@@ -1,10 +1,12 @@
 // import { configureStore } from 'redux';
 import { configureStore } from '@reduxjs/toolkit'
 import componentRedux from './component'
+import userRedux from './user'
 
 const rootReducer = configureStore({
   reducer: {
-    component: componentRedux
+    component: componentRedux,
+    user: userRedux
   }
 });
 
