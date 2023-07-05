@@ -7,7 +7,6 @@
   align-self: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  // width: 250px;
   height: calc(100dvh - 76px);
   padding-block: 10px;
   white-space: nowrap;
@@ -34,7 +33,7 @@
     }
   }
   &.open {
-    width: 250px;
+    width: 280px;
   }
 
   nav {
