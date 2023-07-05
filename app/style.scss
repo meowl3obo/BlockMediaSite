@@ -1,6 +1,15 @@
+@import "@/app/styles/mixin.scss";
+
 .home-main {
   width: -webkit-fill-available;
   padding: 20px 50px;
+
+  @include pc {
+    padding: 20px 50px;
+  }
+  @include mobile {
+    padding: 20px 10px;
+  }
 
   .video-content {
     display: grid;
