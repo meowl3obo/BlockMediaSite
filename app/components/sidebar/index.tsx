@@ -30,7 +30,8 @@ export default () => {
                   <Link href={link.link}>{link.text}</Link>
                 </div>
               </li>
-          })}
+            })
+          }
         </ul>
         <hr></hr>
         <ul>
@@ -43,7 +44,8 @@ export default () => {
                   <Link href={link.link}>{link.text}</Link>
                 </div>
               </li>
-          })}
+            })
+          }
         </ul>
       </nav>
       <footer>
