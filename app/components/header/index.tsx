@@ -59,7 +59,6 @@ export default () => {
         </div>
         <div className="site-icon">
           <Link href="/">
-          {/* MeowlTube */}
             <LogoDark />
           </Link>
         </div>
