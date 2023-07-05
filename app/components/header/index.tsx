@@ -43,7 +43,7 @@ export default () => {
   return (
     <header className="header">
       <div className="start">
-        <div>
+        <div className="pc-only">
           <IconButton icon={faBars} size="fa-xl" onClick={controlSideBar}></IconButton>
         </div>
         <div className="site-icon">
@@ -62,10 +62,10 @@ export default () => {
         </div>
       </div>
       <div className="end">
-        <div>
+        <div className="pc-only">
           <IconButton icon={faVideo} size="fa-xl" onClick={toUploadVideo}></IconButton>
         </div>
-        <div>
+        <div className="pc-only">
           <IconButton icon={faBell} size="fa-xl" onClick={checkNotify}></IconButton>
         </div>
         <div>

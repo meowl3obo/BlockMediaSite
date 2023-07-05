@@ -4,7 +4,7 @@ interface IState {
   sidebarStatus: boolean
 }
 const initialState: IState = {
-  sidebarStatus: false
+  sidebarStatus: true
 }
 
 const componentSlice = createSlice({

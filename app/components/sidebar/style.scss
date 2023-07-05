@@ -7,15 +7,41 @@
   align-self: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  width: 250px;
+  // width: 250px;
   height: calc(100dvh - 76px);
   padding-block: 10px;
   white-space: nowrap;
+  overflow: hidden;
+
+  @include mobile {
+    display: none;
+  }
+  &.close {
+    width: 85px;
+    li {
+      display: block;
+      padding: 9px 3px;
+      text-align: center;
+      .link-div {
+        margin-top: 5px;
+      }
+      a {
+        margin-left: 0;
+      }
+    }
+    footer {
+      display: none;
+    }
+  }
+  &.open {
+    width: 250px;
+  }
 
   nav {
     padding-inline: 10px;
 
     li {
+      display: flex;
       cursor: pointer;
       padding: 9px 20px;
       list-style-type: none;

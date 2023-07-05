@@ -25,3 +25,15 @@
 @function get-light-color($key) {
   @return map-get(map-get($theme, light), $key)
 };
+
+@mixin pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}

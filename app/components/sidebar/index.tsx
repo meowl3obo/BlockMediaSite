@@ -22,18 +22,26 @@ export default () => {
       <nav>
         <ul>
           { firstLinks.map(link => {
-            return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
-              <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
-              <Link href={link.link}>{link.text}</Link>
-            </li>
+              return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
+                <div>
+                  <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
+                </div>
+                <div className='link-div'>
+                  <Link href={link.link}>{link.text}</Link>
+                </div>
+              </li>
           })}
         </ul>
         <hr></hr>
         <ul>
           { secondLinks.map(link => {
               return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
-                <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
-                <Link href={link.link}>{link.text}</Link>
+                <div>
+                  <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
+                </div>
+                <div className='link-div'>
+                  <Link href={link.link}>{link.text}</Link>
+                </div>
               </li>
           })}
         </ul>
