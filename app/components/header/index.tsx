@@ -43,11 +43,11 @@ export default () => {
   }
   const controlUserController = async () => {
     if (userAddress === '') {
-      const address = await connectMetamask()
-      if (address === '') console.log("請安裝metamask")
+      const response = await connectMetamask()
+      if (!response.isSuccess) console.log(response.message)
       else {
-        dispatch(setAddress(address))
-        router.push(`/channel/${address}`)
+        dispatch(setAddress(response.address))
+        router.push(`/channel/${response.address}`)
       }
     } else router.push(`/channel/${userAddress}`)
   }
