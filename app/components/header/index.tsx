@@ -30,7 +30,7 @@ export default () => {
   const search = () => {
     if (searchInput.current?.value.trim() === '') return
     const searchQuery = searchInput.current?.value
-    router.push(`result?search=${searchQuery}`)
+    router.push(`/result?search=${searchQuery}`)
   }
   const controlSideBar = () => {
     dispatch(controlSidebar())

@@ -24,10 +24,12 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning={true} >
         <Provider store={rootReducer}>
           <Header />
-          <main className="main">
+          <div className="content">
             <Sidebar />
-            {children}
-          </main>
+            <main className="main">
+              {children}
+            </main>
+          </div>
         </Provider>
       </body>
     </html>

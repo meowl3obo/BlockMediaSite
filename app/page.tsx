@@ -13,7 +13,7 @@ export const metadata = {
 export default function Home() {
   const VideoCard = dynamic(() => import("@/app/components/videoCard"));
   return (
-    <main className='home-main'>
+    <div className='home'>
       <div className='video-content'>
         <VideoCard 
           link="/"
@@ -88,6 +88,6 @@ export default function Home() {
           height={37}
           priority
         /> */}
-    </main>
+    </div>
   )
 }

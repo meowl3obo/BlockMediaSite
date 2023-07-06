@@ -7,8 +7,8 @@ export const metadata = {
 export default ({ params }: IParams) => {
   const id = params['id']
   return (
-    <main>
+    <div>
       <div>content</div>
-    </main>
+    </div>
   )
 }

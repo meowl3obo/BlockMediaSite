@@ -13,7 +13,7 @@ export default function ChannelLayout({
   const params = useParams()
   const id = params['id']
   return (
-    <div>
+    <div className='channel'>
       <div className='links-bar'>
         {
           links.map(link => { 

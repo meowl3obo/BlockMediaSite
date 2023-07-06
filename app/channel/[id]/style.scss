@@ -1,31 +1,33 @@
 @import "@/app/styles/mixin.scss";
 
-.links-bar {
-  padding: 5px 10px;
-
-  a {
-    text-decoration: unset;
-    @include dark-theme {
-      color: get-dark-color(main-font);
-    }
-    @include light-theme {
-      color: get-light-color(main-font);
-    }
-  }
-  .link-span {
+.channel {
+  .links-bar {
     padding: 5px 10px;
-    border-radius: 15px;
-    margin-right: 10px;
-    @include dark-theme {
-      background-color: get-dark-color(icon-btn-background);
-      &:hover {
-        background-color: get-dark-color(icon-btn-background-active);
+  
+    a {
+      text-decoration: unset;
+      @include dark-theme {
+        color: get-dark-color(main-font);
+      }
+      @include light-theme {
+        color: get-light-color(main-font);
       }
     }
-    @include light-theme {
-      background-color: get-light-color(icon-btn-background);
-      &:hover {
-        background-color: get-light-color(icon-btn-background-active);
+    .link-span {
+      padding: 5px 10px;
+      border-radius: 15px;
+      margin-right: 10px;
+      @include dark-theme {
+        background-color: get-dark-color(icon-btn-background);
+        &:hover {
+          background-color: get-dark-color(icon-btn-background-active);
+        }
+      }
+      @include light-theme {
+        background-color: get-light-color(icon-btn-background);
+        &:hover {
+          background-color: get-light-color(icon-btn-background-active);
+        }
       }
     }
   }
