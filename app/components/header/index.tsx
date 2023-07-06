@@ -13,11 +13,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faVideo, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faBell, faUser } from '@fortawesome/free-regular-svg-icons'
 import { connectMetamask } from '@/app/utils/metamask';
+import IconButton from "@/app/components/iconButton"
+import LogoLight from "@/app/components/logo/logo-light"
+import LogoDark from "@/app/components/logo/logo-dark"
 
 export default () => {
-  const IconButton = dynamic(() => import("@/app/components/iconButton"));
-  const LogoLight = dynamic(() => import("@/app/components/logo/logo-light"));
-  const LogoDark = dynamic(() => import("@/app/components/logo/logo-dark"));
   const dispatch = useDispatch()
   const router = useRouter()
   const userAddress = useSelector((state: RootState) => state.user.address)
