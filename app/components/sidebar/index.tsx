@@ -23,12 +23,14 @@ export default () => {
         <ul>
           { firstLinks.map(link => {
               return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
-                <div>
-                  <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
-                </div>
-                <div className='link-div'>
-                  <Link href={link.link}>{link.text}</Link>
-                </div>
+                <Link href={link.link}>
+                  <div>
+                    <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
+                  </div>
+                  <div className='link-div'>
+                    {link.text}
+                  </div>
+                </Link>
               </li>
             })
           }
@@ -37,12 +39,14 @@ export default () => {
         <ul>
           { secondLinks.map(link => {
               return <li className={pathName === link.link ? 'active' : ''} key={link.text} onClick={() => toPath(link.link)}>
-                <div>
-                  <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
-                </div>
-                <div className='link-div'>
-                  <Link href={link.link}>{link.text}</Link>
-                </div>
+                <Link href={link.link}>
+                  <div>
+                    <FontAwesomeIcon icon={link.icon} className='fa-lg'></FontAwesomeIcon>
+                  </div>
+                  <div className='link-div'>
+                    {link.text}
+                  </div>
+                </Link>
               </li>
             })
           }

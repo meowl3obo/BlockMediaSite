@@ -18,14 +18,17 @@
   &.close {
     width: 85px;
     li {
-      display: block;
-      padding: 9px 3px;
-      text-align: center;
-      .link-div {
-        margin-top: 5px;
-      }
       a {
-        margin-left: 0;
+        display: block;
+        padding: 9px 3px;
+        text-align: center;
+        width: calc(100% - 6px);
+
+        .link-div {
+          margin-top: 5px;
+          margin-left: 0;
+          font-size: 14px;
+        }
       }
     }
     footer {
@@ -40,9 +43,8 @@
     padding-inline: 10px;
 
     li {
-      display: flex;
+      // display: flex;
       cursor: pointer;
-      padding: 9px 20px;
       list-style-type: none;
       border-radius: 10px;
       margin-bottom: 5px;
@@ -73,15 +75,20 @@
       }
 
       a {
-        font-size: 14px;
+        display: flex;
+        padding: 9px 23px;
         font-weight: 300;
         text-decoration: unset;
-        margin-left: 20px;
+        width: calc(100% - 46px);
         @include dark-theme {
           color: get-dark-color(main-font);
         }
         @include light-theme {
           color: get-light-color(main-font);
+        }
+
+        .link-div {
+          margin-left: 20px;
         }
       }
     }

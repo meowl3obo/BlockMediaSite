@@ -45,6 +45,12 @@ header {
     }
   }
 
+  .start {
+    @include pc {
+      margin-left: 8px;
+    }
+  }
+
   .end {
     gap: 15px;
 

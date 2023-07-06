@@ -17,9 +17,9 @@ export default function ChannelLayout({
       <div className='links-bar'>
         {
           links.map(link => { 
-            return <span className='link-span' key={link.text}>
-              <Link href={`/channel/${id}${link.link}`}>{link.text}</Link>
-            </span>
+            return <Link href={`/channel/${id}${link.link}`} key={link.text}>
+              <span className='link-span' key={link.text}>{link.text}</span>
+            </Link>
           })
         }
       </div>
