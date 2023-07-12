@@ -10,7 +10,7 @@ export default function ChannelLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const params = useParams()
+  const params = useParams()!
   const id = params['id']
   return (
     <div className='channel'>

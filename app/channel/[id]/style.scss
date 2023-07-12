@@ -1,9 +1,8 @@
 @import "@/app/styles/mixin.scss";
 
 .channel {
+  padding: 20px;
   .links-bar {
-    padding: 5px 10px;
-  
     a {
       text-decoration: unset;
       @include dark-theme {
