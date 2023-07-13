@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { httpMethod, IPayload } from '@/app/types/http'
+import { pinataBaseUrl, pinataApiKey, pinataSecretApiKey } from '@/app/config/http'
 
 const ipfs = axios.create({
-  baseURL: "https://api.pinata.cloud",
+  baseURL: pinataBaseUrl,
   timeout: 30 * 1000,
   headers: {
     'Content-Type': 'application/json',
@@ -12,11 +13,11 @@ const ipfs = axios.create({
 })
 
 const ipfsForm = axios.create({
-  baseURL: "https://api.pinata.cloud",
+  baseURL: pinataBaseUrl,
   timeout: 30 * 1000,
   headers: {
-    'pinata_api_key': `a521d4dea7894a3011b4`,
-    'pinata_secret_api_key': `9acff15fcc85f295c45caa859ff149630d0af4e7a41e63a7b53dbcb3d98e51cb`,
+    'pinata_api_key': pinataApiKey,
+    'pinata_secret_api_key': pinataSecretApiKey,
     "Content-Type": "multipart/form-data"
   }
 })

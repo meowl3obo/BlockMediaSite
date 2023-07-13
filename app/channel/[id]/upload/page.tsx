@@ -26,21 +26,26 @@ export default ({ params }: IParams) => {
 
   return (
     <div className="upload-main">
-      <div className="input-content">
-        <div className="input-background">
-          將你要上傳的影片檔案拖曳到這裡
+      <div className="media-data-content">
+        <div className="input-content">
+          <div className="input-background">
+            將你要上傳的影片檔案拖曳到這裡
+          </div>
+          <input type="file" accept="video/*" ref={videoInput}></input>
         </div>
-        <input type="file" accept="video/*" ref={videoInput}></input>
+        <div className="info-content">
+          <div className="title-input">
+            <div className="input-hint">標題(必填)</div>
+            <input type="text" placeholder="新增可描述影片內容的標題"></input>
+          </div>
+          <div className="caption-input">
+            <div className="input-hint">說明</div>
+            <textarea placeholder="向觀眾介紹你的影片"></textarea>
+          </div>
+        </div>
       </div>
-      <div className="info-content">
-        <div className="title-input">
-          <div className="input-hint">標題(必填)</div>
-          <input type="text" placeholder="新增可描述影片內容的標題"></input>
-        </div>
-        <div className="caption-input">
-          <div className="input-hint">說明</div>
-          <textarea placeholder="向觀眾介紹你的影片"></textarea>
-        </div>
+      <div>
+        <button onClick={uploadVideoEvent}>upload</button>
       </div>
     </div>
   )
