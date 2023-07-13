@@ -2,7 +2,6 @@
 
 import "./style.scss";
 import { useRef, KeyboardEvent } from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux'
@@ -35,21 +34,24 @@ export default () => {
   const controlSideBar = () => {
     dispatch(controlSidebar())
   }
-  const toUploadVideo = () => {
-    console.log('toUploadVideo')
+  const toUploadVideo = async () => {
+    toChannelPath('/upload')
   }
   const checkNotify = () => {
     console.log('checkNotify')
   }
   const controlUserController = async () => {
+    toChannelPath('')
+  }
+  const toChannelPath = async (url: string) => {
     if (userAddress === '') {
       const response = await connectMetamask()
       if (!response.isSuccess) console.log(response.message)
       else {
         dispatch(setAddress(response.address))
-        router.push(`/channel/${response.address}`)
+        router.push(`/channel/${response.address}${url}`)
       }
-    } else router.push(`/channel/${userAddress}`)
+    } else router.push(`/channel/${userAddress}${url}`)
   }
   return (
     <header className="header">

@@ -1,0 +1,88 @@
+@import "@/app/styles/mixin.scss";
+
+.upload-main {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .input-content {
+    position: relative;
+    width: 37%;
+    .input-background {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      @include dark-theme {
+        background-color: get-dark-color(icon-btn-background);
+      }
+      @include light-theme {
+        background-color: get-light-color(icon-btn-background);
+      }
+    }
+    input {
+      opacity: 0;
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+  .info-content {
+    width: 58%;
+    .title-input,
+    .caption-input {
+      position: relative;
+      .input-hint {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+        padding-block: 2px;
+        opacity: .7;
+        @include dark-theme {
+          color: get-dark-color(sub-font);
+        }
+        @include light-theme {
+          color: get-light-color(sub-font);
+        }
+      }
+      input,
+      textarea {
+        width: calc(100% - 20px);
+        padding: 40px 10px 20px 10px;
+        background-color: transparent;
+        outline: unset;
+        resize: none;
+        margin-bottom: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 5px;
+        font-size: 16px;
+        @include dark-theme {
+          color: get-dark-color(main-font);
+          border-color: get-dark-color(input-border);
+          &:focus {
+            border-color: get-dark-color(input-border-focus);
+          }
+        }
+        @include light-theme {
+          color: get-light-color(main-font);
+          border-color: get-light-color(input-border);
+          &:focus {
+            border-color: get-light-color(input-border-focus);
+          }
+        }
+      }
+    }
+    .caption-input {
+      textarea {
+        height: 250px;
+      }
+    }
+  }
+}
