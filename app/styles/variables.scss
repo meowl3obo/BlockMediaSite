@@ -1,5 +1,7 @@
 $theme: (
   dark: (
+    main-color: #ff0000,
+    control-color: #3ea6ff,
     base-background: #0f0f0f,
     scrollbar-thumb: #a1a1a1,
     scrollbar-thumb-hover: #5c5c5c,
@@ -14,6 +16,8 @@ $theme: (
     icon-btn-background-active: #a1a1a160,
   ),
   light: (
+    main-color: #ff0000,
+    control-color: #3ea6ff,
     base-background: #fff,
     scrollbar-thumb: #a1a1a1,
     scrollbar-thumb-hover: #5c5c5c,
@@ -26,5 +30,5 @@ $theme: (
 
     icon-btn-background: #a1a1a140,
     icon-btn-background-active: #a1a1a160,
-  )
-)
+  ),
+);

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "上傳影片 - MeowlTube",
+  title: "影片 - MeowlTube",
 };
 
 
