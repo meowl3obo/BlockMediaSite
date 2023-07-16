@@ -4,3 +4,11 @@ export interface IIPFSResponse {
   Timestamp: string
   isDuplicate: boolean
 }
+
+export interface IVideoInfo {
+  link: string,
+  name: string,
+  author: string,
+  views: string,
+  date: string
+}

@@ -2,16 +2,9 @@ import './style.scss'
 import Link from "next/link";
 
 import { getBeforeDate } from '@/app/utils/date'
+import { IVideoInfo } from '@/app/types/video'
 
-interface props {
-  link: string,
-  name: string,
-  author: string,
-  views: string,
-  date: string
-}
-
-export default (props: props) => {
+export default (props: IVideoInfo) => {
   const beforeDate = getBeforeDate(props.date)
   
   return (

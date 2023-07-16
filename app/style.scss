@@ -9,10 +9,13 @@
   }
 
   .video-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    row-gap: 20px;
-    column-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
+
+    a {
+      padding: 5px 10px;
+    }
   }
 }
