@@ -14,18 +14,29 @@
     }
     .link-span {
       padding: 5px 10px;
-      border-radius: 15px;
+      border-radius: 8px;
       margin-right: 10px;
       @include dark-theme {
         background-color: get-dark-color(icon-btn-background);
         &:hover {
-          background-color: get-dark-color(icon-btn-background-active);
+          background-color: get-dark-color(icon-btn-background-hover);
         }
       }
       @include light-theme {
         background-color: get-light-color(icon-btn-background);
         &:hover {
+          background-color: get-light-color(icon-btn-background-hover);
+        }
+      }
+
+      &.active {
+        @include dark-theme {
+          background-color: get-dark-color(icon-btn-background-active);
+          color: get-dark-color(icon-btn-color-active);
+        }
+        @include light-theme {
           background-color: get-light-color(icon-btn-background-active);
+          color: get-light-color(icon-btn-color-active);
         }
       }
     }
