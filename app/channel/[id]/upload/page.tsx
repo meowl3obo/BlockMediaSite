@@ -23,11 +23,11 @@ export default ({ params }: IParams) => {
       return
     }
     const {data, error, statusCode} = await uploadVideoToIPFS(videoFiles[0])
-    if (statusCode !== 200 && !data) {
+    if (statusCode !== 200 || !data) {
       console.log(error)
       return
     }
-    const ipfsHash = data!.IpfsHash
+    const ipfsHash = data.IpfsHash
     console.log(title)
     console.log(caption)
     console.log(ipfsHash)
